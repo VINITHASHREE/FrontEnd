@@ -20,10 +20,10 @@
                     <form role="form" method="post" action="newUser" >
                     
                         <label for="username">UserName</label>
-                        <input type="text" id="username" class="form-control" name="username" placeholder="Example: John">
+                        <input type="text" id="username" class="form-control" name="un" placeholder="Example: John">
               	          
                         <label for="emailaddress" class="m-t-10">EmailAddress</label>
-                        <input type="text" id="emailaddress" class="form-control" name="emailaddress" placeholder="Example: john.smith@gmail.com">
+                        <input type="text" id="emailaddress" class="form-control" name="em" placeholder="Example: john.smith@gmail.com">
                         
                         <label for="password" class="m-t-10">Password</label>
                         <input type="password" id="password" class="form-control" name="password" placeholder="">
@@ -32,7 +32,7 @@
                         <input type="address" id="address" class="form-control" name="address" placeholder="Your Address">
                         
                         <label for="mobilenumber" class="m-t-10">MobileNumber</label>
-                        <input type="mobilenumber" id="mobilenumber" class="form-control" name="mobilenumber" placeholder="">
+                        <input type="mobilenumber" id="mobilenumber" class="form-control" name="mm" placeholder="">
                         
                         <center><input type="submit" class="btn btn-primary m-t-10" id="submitbtn" name="submit" value="Submit"></center>
                         

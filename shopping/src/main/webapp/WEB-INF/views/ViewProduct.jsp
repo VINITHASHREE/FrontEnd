@@ -30,23 +30,25 @@
 <table>
 <tr>
 <th>productid</th>
-<th>productname</th>
+<th>pn</th>
 <th>size</th>
 <th>quantity</th>
 <th>price</th>
-<th>categoryid</th>
-<th>supplierid</th>
+<th>cid</th>
+<th>sid</th>
 <th>description</th>
 </tr>
 <tr ng-repeat="items in result">
 <th>{{items.productid}}</th>
-<th>{{items.productname}}</th>
+<th>{{items.pn}}</th>
 <th>{{items.size}}</th>
 <th>{{items.quantity}}</th>
 <th>{{items.price}}</th>
-<th>{{items.categoryid}}</th>
-<th>{{items.supplierid}}</th>
+<th>{{items.cid}}</th>
+<th>{{items.sid}}</th>
 <th>{{items.description}}</th>
+<th><a href="getproduct/{{items.productid}}">edit</a></th>
+<th><a href="deleteproduct/{{items.productid}}">delete</a></th>
 
 
 </tr>

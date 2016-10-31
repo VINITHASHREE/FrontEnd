@@ -13,7 +13,7 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
 	
-<title>ADD PRODUCT</title>
+<title>ADD SUPPLIER</title>
 
 <style type="text/css">
 body {
@@ -37,64 +37,41 @@ body {
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal " role="form" action="newProduct">
-			<h2>Add Product form</h2>
+		<form class="form-horizontal " role="form" action="newSupplier">
+			<h2>Add Supplier form</h2>
 			<div class="form-group">
-				<label for="productname" class="col-sm-3 control-label">productname</label>
+				<label for="suppliername" class="col-sm-3 control-label">SupplierName</label>
 				<div class="col-sm-9">
-					<input type="text" id="productname" name="pn"  
+					<input type="text" id="suppliername" name="sn"  
 						class="form-control" autofocus>  
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="size" class="col-sm-3 control-label">size</label>
+				<label for="emailaddress" class="col-sm-3 control-label">EmailAddress</label>
 				<div class="col-sm-9">
-					<input type="text" id="size" name="size" 
+					<input type="text" id="emailaddress" name="em" 
 						class="form-control"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="quantity" class="col-sm-3 control-label">quantity</label>
+				<label for="address" class="col-sm-3 control-label">Address</label>
 				<div class="col-sm-9">
-					<input type="text" id="quantity" name="quantity" 
+					<input type="text" id="address" name="addr" 
 						class="form-control"> 
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="price" class="col-sm-3 control-label">price</label>
+				<label for="mobilenumber" class="col-sm-3 control-label">MobileNumber</label>
 				<div class="col-sm-9">
-					<input type="text" id="price" name="price"
+					<input type="text" id="mobilenumber" name="mn"
 						 class="form-control" >
 				</div>
 			</div>
 			
-			<div class="form-group">
-				<label for="categoryid" class="col-sm-3 control-label">categoryid</label>
-				<div class="col-sm-9">
-					<input type="text" id="categoryid" name="cid"
-						 class="form-control" >
-				</div>
-			</div>
 			
-			<div class="form-group">
-				<label for="supplierid" class="col-sm-3 control-label">supplierid</label>
-				<div class="col-sm-9">
-					<input type="text" id="supplierid" name="sid"
-						 class="form-control" >
-				</div>
-			</div>
 			<!-- /.form-group -->
 
-			
-				<div class="form-group">
-				<label for="description" class="col-sm-3 control-label">description</label>
-				<div class="col-sm-9">
-					<input type="text" id="description" name="description" 
-						class="form-control">
-
-				</div>
-			</div>
- 
+		
 			<div class="form-group">
 				<div class="col-sm-9 col-sm-offset-3">
 					<button type="submit" class="btn btn-primary btn-block">ADD</button>

@@ -23,11 +23,11 @@
 			<div class="form-group">
 			  <div class="col-sm-9 col-sm-offset-3"> 
 			  <label for="categoryname">CategoryName</label>
-              <input type="text" id="categoryname" class="form-control" name="categoryname" >
+              <input type="text" id="categoryname" class="form-control" name="cn" >
               	          
                <div class="col-sm-9 col-sm-offset-3">       
               <label for="categorydesc" class="m-t-10">CategoryDesc</label>
-              <input type="text" id="categorydesc" class="form-control" name="categorydesc">
+              <input type="text" id="categorydesc" class="form-control" name="cd">
                         
           	
 			<div class="form-group">
