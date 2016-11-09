@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,14 +20,10 @@ body {
 }
 </style>
 <body>
-
+<%@ include file="/WEB-INF/views/Menu.jsp" %>
 	<div class="container">
-		<c:if test="${not empty error}">
-			<div class="error">${error}</div>
-		</c:if>
-		<c:if test="${not empty msg}">
-			<div class="msg">${msg}</div>
-		</c:if>                             
+	<center>${message }</center>
+		                           
 
 		<%-- <form name='login' action="<c:url value="/login" />" method='POST'>
 		</form>
@@ -43,6 +40,14 @@ body {
 		<div class="row">
 			<div class="col-md-4 col-md-offset-4">
 				<div class="panel panel-default">
+				<c:if test="${not empty error}">
+			<center><h3><div style="color : red" class="error">${error}</div></h3></center>
+			
+		</c:if>
+		
+		<c:if test="${not empty logout}">
+			<center><h3><div style="color : green" class="msg">${logout}</div></h3></center>
+		</c:if>  
 					<div class="panel-heading">
 						<h3 class="panel-title">Please Log in</h3>
 					</div>

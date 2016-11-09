@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,6 +18,7 @@
 
 </head>
 <body>
+<%@ include file="/WEB-INF/views/Menu.jsp" %>
 	<div class="container">
 		<form class="form-horizontal " role="form" action="newCategory">
 			<h2>Add category form</h2>
@@ -26,13 +28,13 @@
               <input type="text" id="categoryname" class="form-control" name="cn" >
               	          
                <div class="col-sm-9 col-sm-offset-3">       
-              <label for="categorydesc" class="m-t-10">CategoryDesc</label>
+              <label for="categorydesc">CategoryDesc</label>
               <input type="text" id="categorydesc" class="form-control" name="cd">
                         
           	
 			<div class="form-group">
 				<div class="col-sm-9 col-sm-offset-3">
-					<center><button type="submit" class="btn btn-primary btn-block">ADD</button></center>
+					<center><button type="submit" class="btn btn-success btn-block">ADD</button></center>
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -36,6 +37,7 @@ body {
 
 </head>
 <body>
+<%@ include file="/WEB-INF/views/Menu.jsp" %>
 	<div class="container">
 		<form class="form-horizontal " role="form" action="newSupplier">
 			<h2>Add Supplier form</h2>
@@ -74,7 +76,7 @@ body {
 		
 			<div class="form-group">
 				<div class="col-sm-9 col-sm-offset-3">
-					<button type="submit" class="btn btn-primary btn-block">ADD</button>
+					<button type="submit" class="btn btn-success btn-block">ADD</button>
 				</div>
 			</div>
 		</form>

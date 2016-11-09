@@ -1,5 +1,6 @@
 package com.niit.shopping;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,12 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
+import com.niit.modal.Category;
 import com.niit.modal.Product;
+import com.niit.modal.Supplier;
+import com.niit.service.CategoryDAO;
 import com.niit.service.ProductDAO;
+import com.niit.service.SupplierDAO;
 @Controller
 public class ProductController {
 	
@@ -22,26 +30,50 @@ public class ProductController {
 	@Autowired
 	private ProductDAO productDAO;
 	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
+	@Autowired
+	private SupplierDAO supplierDAO;
+	
+	@RequestMapping("getproduct")
+	 public ModelAndView getItem()
+	 {
+		List<Category> categoryList = categoryDAO.getAllCategory();
+		List<Supplier> supplierList = supplierDAO.getAllSupplier();
+		
+		ModelAndView mv=new ModelAndView("AddProduct");
+		mv.addObject("categoryList", categoryList);
+		mv.addObject("supplierList", supplierList);
+
+		return mv;
+	 }
 	
 	
-@RequestMapping("getproduct")
+	
+/*@RequestMapping("getproduct")
  public String getproduct()
  {
 	return "AddProduct";
- }
+ }*/
 @RequestMapping("deleteproduct/{id}")
 public String deleteProduct(@PathVariable ("id") int id) {
 	productDAO.deleteProduct(id);
 	return "redirect:/viewproduct";
 }
 
-@RequestMapping("newProduct")
- public ModelAndView newProduct(@ModelAttribute Product product)
- {
+
+@RequestMapping(value="newProduct" , method=RequestMethod.POST)
+public ModelAndView newProduct(@ModelAttribute Product product,@RequestParam("file") MultipartFile file)
+{
+	
 	productDAO.insertProduct(product);
+	String path = "E://project/shopping/src/main/webapp/WEB-INF/resources/productImages/";
+	FileUtil.upload(path, file, product.getId()+".jpg");
+
 	ModelAndView mv = new ModelAndView("AddProduct");
 	return mv;
- }
+}
 
 @RequestMapping("viewproduct")
 public ModelAndView viewproduct()
@@ -58,6 +90,15 @@ public @ResponseBody String viewproducts()
 	String result=gs.toJson(listProduct);
 	System.out.print(result);
 	return result;
+}
+
+@RequestMapping("getproductimg/{id}")
+public ModelAndView getproductimg(@PathVariable ("id") int id){
+	Product product = productDAO.getProduct(id);
+	ModelAndView mv=new ModelAndView("productimg");
+	mv.addObject("p", product);
+	System.out.println("display image");
+	return mv;
 }
 }
 
